@@ -31,9 +31,10 @@ def search_book_kan(title=None, author=None, lang_code=None, isbn=None):
     else:
         result = subprocess.run(['kan_alexandria', '--title', title, '--author', author, '--max', '1', '--language', lang_code], stdout=subprocess.PIPE)
     searchbook = result.stdout.decode('utf-8')
+    #iso-8859-1
 
     #testing if the book was found
-    if searchbook != None:
+    if 'Web Request Failed' not in searchbook:
 
         #string slicing
         title_position = searchbook.find('Title: ')
@@ -62,4 +63,15 @@ def search_book_kan(title=None, author=None, lang_code=None, isbn=None):
         return book_dict
 
     else:
-        return None
+        book_dict = {
+            'title': ' ',
+            'author': ' ',
+            'isbn': ' ',
+            'categories': ' ',
+            'description': ' ',
+            'img': ' ',
+            'publisher': ' ',
+            'publishedDate': ' ',
+            'pageCount': ' '
+        }
+        return book_dict

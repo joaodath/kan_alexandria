@@ -106,7 +106,11 @@ def main():
     # Temporary Display Interface
     books = query.json.get('items', None)
     if not books:
-        raise AttributeError('Web Request Failed')
+        #raise AttributeError('Web Request Failed')
+        # book = dict()
+        # return None
+        print('Web Request Failed')
+        return None
 
     for book in books:
         info = book['volumeInfo']
