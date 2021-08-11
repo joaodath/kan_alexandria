@@ -7,6 +7,9 @@ from .__version__ import __version__, __release__
 from .structures import *
 from .models import *
 
+import os
+os.environ['PYTHONIOENCODING'] = 'UTF-8'
+
 __all__ = (
     'AbstractBaseAPIClient',
     'GoogleBooksAPIClient',
@@ -20,7 +23,7 @@ def command_line():
     Parses users command line arguments and returns the namespace
     containing parsed values.
     '''
-    description = 'Kan helps you find the book'
+    description = 'Kan_Alexandria helps you find the book'
     version     = ' '.join([__version__, __release__])
     parser      = ArgumentParser(prog='kan_alexandria', description=description)
 
@@ -106,7 +109,11 @@ def main():
     # Temporary Display Interface
     books = query.json.get('items', None)
     if not books:
-        raise AttributeError('Web Request Failed')
+        #raise AttributeError('Web Request Failed')
+        # book = dict()
+        # return None
+        print('Web Request Failed')
+        return None
 
     for book in books:
         info = book['volumeInfo']
