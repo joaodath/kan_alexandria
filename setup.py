@@ -38,7 +38,7 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     python_requires=">=3.6",
-    version='0.0.5',
+    version='0.0.6',
     tests_require=['nose'],
     entry_points={
         'console_scripts': [
