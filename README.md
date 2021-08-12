@@ -1,43 +1,27 @@
 (看) Kan: To Read
 ==================
-[![Build Status](https://travis-ci.org/jjangsangy/kan.svg?branch=master)](https://travis-ci.org/jjangsangy/kan) [![GitHub version](https://badge.fury.io/gh/jjangsangy%2Fkan.svg)](http://badge.fury.io/gh/jjangsangy%2Fkan) [![PyPI version](https://badge.fury.io/py/kan.svg)](http://badge.fury.io/py/kan) [![Documentation Status](https://readthedocs.org/projects/kan/badge/?version=latest)](https://readthedocs.org/projects/kan/?badge=latest)
 
-
-Kan is book search utility so you spend less time searching and more time reading.
+Kan_Alexandria is Python 3.5+ library for searching book details using Google
+Books API. It's based on the original Kan module but optimized for consumption
+of more data and returns the data in a more usable format (Python dicts).
 
 # Installation
 
 ## Install from PyPi
 
 ```sh
-$ pip install kan
-```
-
-## From Source
-
-To get the latest version to try out, clone the github repo.
-```sh
-$ git clone https://github.com/jjangsangy/kan.git
-```
-
-Use `setup.py` to install
-```sh
-# For Python 2.x Install
-$ python setup.py install
-
-# For Python 3.x
-$ python3 setup.py install
+$ pip install kan-alexandria
 ```
 
 # Usage
 
 ```sh
 # Print Out Help Instructions
-$ kan -h
+$ kan_alexandria -h
 ```
 
 ```
-Usage: kan [-h] [-v] [--title name] [--author name] [--max n]
+Usage: kan_alexandria [-h] [-v] [--title name] [--author name] [--max n]
            [--subject topic] [--language code]
            {title,isbn,author} ...
 
@@ -63,7 +47,7 @@ optional arguments:
 Simplest way is to search for book by title. By default, you'll get the top 3 matches.
 
 ```
-$ kan title 'Fifty Shades'
+$ kan_alexandria title 'Fifty Shades'
 ```
 
 ```
@@ -83,7 +67,7 @@ ISBN: N/A
 Search more generally and tweak your search parameters.
 
 ```sh
-$ kan --language ko --max 5 author 'J. K. Rowling' --top
+$ kan_alexandria --language ko --max 5 author 'J. K. Rowling' --top
 ```
 ```
 Title: 해리포터와마법사의돌
